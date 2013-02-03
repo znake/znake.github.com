@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: hello world | My Octopress Blog]]></title>
+  <title><![CDATA[Category: hello world | artathack.com]]></title>
   <link href="http://znake.github.com/blog/categories/hello-world/atom.xml" rel="self"/>
   <link href="http://znake.github.com/"/>
-  <updated>2013-02-03T23:12:25+01:00</updated>
+  <updated>2013-02-03T23:23:01+01:00</updated>
   <id>http://znake.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Jakob]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
