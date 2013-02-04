@@ -5,6 +5,7 @@ date: 2013-01-20 11:41
 comments: true
 categories: 
 - jQuery
+- html
 ---
 
 Since I had to do this lately and didn't found a tutorial which was up to date I decided to write one by myself. If you google this task the great post of Imar Spaanjaars [How Do I Make a Full Table Row Clickable Using jQuery?](http://imar.spaanjaars.com/549/how-do-i-make-a-full-table-row-clickable-using-jquery) is one of the top results, so I´d like to show a quite similar but simplified version of this example. (just to provide and alternative attempt not a better one, to make this clear!)
