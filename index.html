@@ -25,26 +25,32 @@
   <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="artathack.com" type="application/atom+xml">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=Arvo:400,400italic,700,700italic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=Playball" rel="stylesheet" type="text/css">
 
   
 
 </head>
 
-<body>
+<body   >
   <header role="banner"><hgroup>
+  <div id="logo">
+  	<div id="logoLeft">{</div>
+  	<div id="logoText">mob</div>
+  	<div id="logoRight">}</div>
+  	<div class="clear"></div>
+  </div>
   <h1><a href="/">artathack.com</a></h1>
   
     <h2>about web and mobile development</h2>
   
+  <div class="clear"></div>
 </hgroup>
 
 </header>
-  <div id="navigation">
-    <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
   <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
   
 </ul>
@@ -62,11 +68,9 @@
 </ul>
 
 </nav>
-  </div>
-  <div id="body"  >
-    <div id="main">
-      <div id="content">
-        <div class="blog-index">
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
   
   
   
@@ -74,7 +78,9 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/01/20/link-a-table-row-with-jquery/">Link a Table Row With jQuery</a></h1>
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2013/01/20/link-a-table-row-with-jquery/">Link a Table Row With jQuery</a></h1>
+      
     
     
       <p class="meta">
@@ -193,6 +199,80 @@
 
     </article>
   
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2012/08/25/run-ruby-scripts-within-vim/">Run Ruby Scripts Within VIM!</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-25T11:41:00+02:00" pubdate data-updated="true">Aug 25<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Since I&#8217;m writing lots of Ruby scripts lately I was tired testing them using the Command Line and MacVim.</p>
+
+<p>Saving the file, go to to terminal, reuse last command <code>$ ruby foobar.rb</code></p>
+
+<blockquote><p>to slow and boring!!!</p></blockquote>
+
+<p>Fortunately I found out it is possible to run Ruby Scripts inside VIM with the following 2 commands:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='vim'><span class='line'><span class="p">:</span><span class="k">set</span> <span class="nb">makeprg</span><span class="p">=</span><span class="k">ruby</span>\ %
+</span><span class='line'>
+</span><span class='line'><span class="p">:</span><span class="k">make</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you are lazy like me put something like this in your .vimrc and run your scripts blazingly fast (3 keystrokes)!</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='vim'><span class='line'>map <span class="p">&lt;</span>Leader<span class="p">&gt;</span>rr :<span class="k">set</span> <span class="nb">makeprg</span><span class="p">=</span><span class="k">ruby</span>\ %<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>:<span class="k">make</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you use RVM and want to use a specific version of your installed rubies you can go with something like this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='vim'><span class='line'>map <span class="p">&lt;</span>Leader<span class="p">&gt;</span>rr :<span class="k">set</span> <span class="nb">makeprg</span><span class="p">=~</span><span class="sr">/.rvm/</span><span class="nb">bin</span>/<span class="k">ruby</span><span class="m">-1</span>.<span class="m">9</span>.<span class="m">3</span><span class="p">-</span>p194\ %<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>:<span class="k">make</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Of course this works with other scripting languages as well e.g.:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='vim'><span class='line'>map <span class="p">&lt;</span>Leader<span class="p">&gt;</span>rp :<span class="k">set</span> <span class="nb">makeprg</span><span class="p">=</span>python\ %<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>:<span class="k">make</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
     <a href="/blog/archives">Blog Archives</a>
@@ -209,36 +289,11 @@
         <a href="/blog/2013/01/20/link-a-table-row-with-jquery/">Link a Table Row with jQuery</a>
       </li>
     
+      <li class="post">
+        <a href="/blog/2012/08/25/run-ruby-scripts-within-vim/">Run Ruby Scripts within VIM!</a>
+      </li>
+    
   </ul>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  
-  <a href="https://github.com/znake">@znake</a> on GitHub
-  
-  <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'znake',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
 </section>
 
 
@@ -265,15 +320,15 @@
   
 </aside>
 
-      </div>
     </div>
-    <footer role="contentinfo"><p>
+  </div>
+  <footer role="contentinfo"><p>
   Copyright &copy; 2013 - Jakob -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>. Design by <a href="http://octopressthemes.com">Octopress Themes</a></span>
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
 </footer>
-    
+  
 
 
 
@@ -312,6 +367,5 @@
 
 
 
-  </div>
 </body>
 </html>
