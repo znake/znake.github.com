@@ -1,4 +1,5 @@
 .bundle
+.page_ranks
 .DS_Store
 .sass-cache
 .gist-cache
