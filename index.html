@@ -273,6 +273,68 @@
 
     </article>
   
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2012/08/10/iterm2-same-directory/">iTerm2: Stay in the Same Directory</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-10T11:41:00+02:00" pubdate data-updated="true">Aug 10<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="../images/iterm2/logo.png" alt="logo" /></p>
+
+<p>I use iTerm2 for about a year now but recognized one &#8220;hidden&#8221; handy feature just some days ago.</p>
+
+<p>If you cd in a directory where you might want to run a server, run your tests, use your VCS of choice and so on you need to open the same directory over and over again in your tabs or split panes. Open a new Tab and cd to the same directory all the time is very wasteful. So I´ve written a script which does that for me and bundled it with Spark so I just needed to type a shortcut to open a new Tab and cd to my current directory.</p>
+
+<p>BUT with iTerm2 you can achive this behaviour very easily:</p>
+
+<p>Go to Preferences -> Profiles -> General -> Working Directory -> Advanced Configuration -> Edit</p>
+
+<p><img src="../images/iterm2/-2.png" alt="first" /></p>
+
+<p>Then you´ll be in this menu:</p>
+
+<p><img src="../images/iterm2/-1.png" alt="second" /></p>
+
+<p>And change the Radio Button to Reuse previous session´s directory and you´ll get the automatic cd of your current directory for free!</p>
+
+<p>UPDATE:</p>
+
+<p>If you use zsh &amp; RVM you want to add this line to your .zshrc:</p>
+
+<p>__rvm_project_rvmrc</p>
+
+<p>https://rvm.io/integration/zsh/</p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
     <a href="/blog/archives">Blog Archives</a>
@@ -302,6 +364,10 @@
     
       <li class="post">
         <a href="/blog/2012/08/25/run-ruby-scripts-within-vim/">Run Ruby Scripts within VIM!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/10/iterm2-same-directory/">iTerm2: Stay in the same directory</a>
       </li>
     
   </ul>

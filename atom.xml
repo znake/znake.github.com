@@ -4,7 +4,7 @@
   <title><![CDATA[artathack.com]]></title>
   <link href="http://znake.github.com/atom.xml" rel="self"/>
   <link href="http://znake.github.com/"/>
-  <updated>2013-02-06T22:40:56+01:00</updated>
+  <updated>2013-02-06T22:55:58+01:00</updated>
   <id>http://znake.github.com/</id>
   <author>
     <name><![CDATA[Jakob]]></name>
@@ -152,6 +152,39 @@
 </pre></td><td class='code'><pre><code class='vim'><span class='line'>map <span class="p">&lt;</span>Leader<span class="p">&gt;</span>rp :<span class="k">set</span> <span class="nb">makeprg</span><span class="p">=</span>python\ %<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>:<span class="k">make</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
 </span></code></pre></td></tr></table></div></figure>
 
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[iTerm2: Stay in the same directory]]></title>
+    <link href="http://znake.github.com/blog/2012/08/10/iterm2-same-directory/"/>
+    <updated>2012-08-10T11:41:00+02:00</updated>
+    <id>http://znake.github.com/blog/2012/08/10/iterm2-same-directory</id>
+    <content type="html"><![CDATA[<p><img src="../images/iterm2/logo.png" alt="logo" /></p>
+
+<p>I use iTerm2 for about a year now but recognized one &#8220;hidden&#8221; handy feature just some days ago.</p>
+
+<p>If you cd in a directory where you might want to run a server, run your tests, use your VCS of choice and so on you need to open the same directory over and over again in your tabs or split panes. Open a new Tab and cd to the same directory all the time is very wasteful. So I´ve written a script which does that for me and bundled it with Spark so I just needed to type a shortcut to open a new Tab and cd to my current directory.</p>
+
+<p>BUT with iTerm2 you can achive this behaviour very easily:</p>
+
+<p>Go to Preferences -> Profiles -> General -> Working Directory -> Advanced Configuration -> Edit</p>
+
+<p><img src="../images/iterm2/-2.png" alt="first" /></p>
+
+<p>Then you´ll be in this menu:</p>
+
+<p><img src="../images/iterm2/-1.png" alt="second" /></p>
+
+<p>And change the Radio Button to Reuse previous session´s directory and you´ll get the automatic cd of your current directory for free!</p>
+
+<p>UPDATE:</p>
+
+<p>If you use zsh &amp; RVM you want to add this line to your .zshrc:</p>
+
+<p>__rvm_project_rvmrc</p>
+
+<p>https://rvm.io/integration/zsh/</p>
 ]]></content>
   </entry>
   
