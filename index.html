@@ -1,0 +1,448 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>artathack.com</title>
+  <meta name="author" content="Jakob">
+
+  
+  <meta name="description" content="Since I had to do this lately and didn&#8217;t found a tutorial which was up to date I decided to write one by myself. If you google this task the &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://znake.github.com/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="artathack.com" type="application/atom+xml">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <div id="logo">
+    <!--<div id="logoLeft">{</div>-->
+    <!--<div id="logoText">dev</div>-->
+    <!--<div id="logoRight">}</div>-->
+  	<div class="clear"></div>
+  </div>
+  <h1><a href="/">artathack.com</a></h1>
+  
+    <h2>about web and mobile development</h2>
+  
+  <div class="clear"></div>
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:znake.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2013/01/20/link-a-table-row-with-jquery/">Link a Table Row With jQuery</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-20T11:41:00+01:00" pubdate data-updated="true">Jan 20<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Since I had to do this lately and didn&#8217;t found a tutorial which was up to date I decided to write one by myself. If you google this task the great post of Imar Spaanjaars <a href="http://imar.spaanjaars.com/549/how-do-i-make-a-full-table-row-clickable-using-jquery">How Do I Make a Full Table Row Clickable Using jQuery?</a> is one of the top results, so I´d like to show a quite similar but simplified version of this example. (just to provide and alternative attempt not a better one, to make this clear!)</p>
+
+<p>I also use a table with 3 rows which are all linked to different sites. Imar solves the solution by using an additional column in which he provides the links as a fallback for old browsers and hides them with jQuery.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;tr&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.google.com/&quot;</span><span class="nt">&gt;</span>http://www.google.com/<span class="nt">&lt;/a&gt;&lt;/td&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;</span>1<span class="nt">&lt;/td&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;</span>2<span class="nt">&lt;/td&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;</span>3<span class="nt">&lt;/td&gt;</span>
+</span><span class='line'><span class="nt">&lt;/tr&gt;</span>
+</span><span class='line'><span class="nt">&lt;tr&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.yahoo.com/&quot;</span><span class="nt">&gt;</span>http://www.yahoo.com/<span class="nt">&lt;/a&gt;&lt;/td&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;</span>4<span class="nt">&lt;/td&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;</span>5<span class="nt">&lt;/td&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;</span>6<span class="nt">&lt;/td&gt;</span>
+</span><span class='line'><span class="nt">&lt;/tr&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you don&#8217;t care about old browsers I think there is a shorter method. Instead of using and additional <code>&lt;td&gt;</code> I want to link the table row <code>&lt;tr&gt;</code> explicitly like:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;tr</span> <span class="na">url=</span><span class="s">&quot;http://www.google.at&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;</span>1<span class="nt">&lt;/td&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;</span>2<span class="nt">&lt;/td&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;</span>3<span class="nt">&lt;/td&gt;</span>
+</span><span class='line'><span class="nt">&lt;/tr&gt;</span>
+</span><span class='line'><span class="nt">&lt;tr</span> <span class="na">url=</span><span class="s">&quot;http://www.yahoo.at&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;</span>4<span class="nt">&lt;/td&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;</span>5<span class="nt">&lt;/td&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;</span>6<span class="nt">&lt;/td&gt;</span>
+</span><span class='line'><span class="nt">&lt;/tr&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>To trigger the url when clicking at a table row you can use the <code>live()</code> event of jQuery like this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;table tr&quot;</span><span class="p">).</span><span class="nx">live</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;url&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">});</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>To communicate to your user that a table row is clickable you might want to use some css:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.Pointer</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">cursor</span><span class="o">:</span> <span class="k">pointer</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>The whole code:</p>
+
+<p><a href="https://gist.github.com/4524458">https://gist.github.com/4524458</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2012/08/25/run-ruby-scripts-within-vim/">Run Ruby Scripts Within VIM!</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-25T11:41:00+02:00" pubdate data-updated="true">Aug 25<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Since I&#8217;m writing lots of Ruby scripts lately I was tired testing them using the Command Line and MacVim.</p>
+
+<p>Saving the file, go to to terminal, reuse last command <code>$ ruby foobar.rb</code></p>
+
+<blockquote><p>to slow and boring!!!</p></blockquote>
+
+<p>Fortunately I found out it is possible to run Ruby Scripts inside VIM with the following 2 commands:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='vim'><span class='line'><span class="p">:</span><span class="k">set</span> <span class="nb">makeprg</span><span class="p">=</span><span class="k">ruby</span>\ %
+</span><span class='line'>
+</span><span class='line'><span class="p">:</span><span class="k">make</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you are lazy like me put something like this in your .vimrc and run your scripts blazingly fast (3 keystrokes)!</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='vim'><span class='line'>map <span class="p">&lt;</span>Leader<span class="p">&gt;</span>rr :<span class="k">set</span> <span class="nb">makeprg</span><span class="p">=</span><span class="k">ruby</span>\ %<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>:<span class="k">make</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you use RVM and want to use a specific version of your installed rubies you can go with something like this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='vim'><span class='line'>map <span class="p">&lt;</span>Leader<span class="p">&gt;</span>rr :<span class="k">set</span> <span class="nb">makeprg</span><span class="p">=~</span><span class="sr">/.rvm/</span><span class="nb">bin</span>/<span class="k">ruby</span><span class="m">-1</span>.<span class="m">9</span>.<span class="m">3</span><span class="p">-</span>p194\ %<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>:<span class="k">make</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Of course this works with other scripting languages as well e.g.:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='vim'><span class='line'>map <span class="p">&lt;</span>Leader<span class="p">&gt;</span>rp :<span class="k">set</span> <span class="nb">makeprg</span><span class="p">=</span>python\ %<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>:<span class="k">make</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2012/08/10/iterm2-same-directory/">iTerm2: Stay in the Same Directory</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-10T11:41:00+02:00" pubdate data-updated="true">Aug 10<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="center" src="https://github.com/znake/znake.github.com/blob/master/images/iterm2/logo.png?raw=true" title="logo" ></p>
+
+<p>I use iTerm2 for about a year now but recognized one &#8220;hidden&#8221; handy feature just some days ago.</p>
+
+<p>If you cd in a directory where you might want to run a server, run your tests, use your VCS of choice and so on you need to open the same directory over and over again in your tabs or split panes. Open a new Tab and cd to the same directory all the time is very wasteful. So I´ve written a script which does that for me and bundled it with Spark so I just needed to type a shortcut to open a new Tab and cd to my current directory.</p>
+
+<p>BUT with iTerm2 you can achive this behaviour very easily:</p>
+
+<p>Go to Preferences -> Profiles -> General -> Working Directory -> Advanced Configuration -> Edit</p>
+
+<p><img src="https://github.com/znake/znake.github.com/blob/master/images/iterm2/-1.png?raw=true" alt="first" /></p>
+
+<p>Then you´ll be in this menu:</p>
+
+<p><img src="https://github.com/znake/znake.github.com/blob/master/images/iterm2/-2.png?raw=true" alt="second" /></p>
+
+<p>And change the Radio Button to Reuse previous session´s directory and you´ll get the automatic cd of your current directory for free!</p>
+
+<p>UPDATE:</p>
+
+<p>If you use zsh &amp; RVM you want to add this line to your .zshrc:</p>
+
+<p>__rvm_project_rvmrc</p>
+
+<p><a href="https://rvm.io/integration/zsh/">https://rvm.io/integration/zsh/</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    
+<section>
+	<span>
+		<img src="http://www.gravatar.com/avatar/4a34fec6388df56916794f568aff700f" alt="Gravatar of Jakob " title="Gravatar of Jakob" />
+	</span>
+  <h2>Jakob Lehner</h2>
+  <p>Hi, I´m an austrian software developer.</p>
+  <p>I´m enthusiastic about web and mobile development. This blog is about technology and tools I love and use everyday like Ruby, CoffeeScript, VIM, HTML5 and much more.</p>
+  <p>More about me:   <a href="http://www.jakoblehner.com/">jakoblehner.com</a></p> 
+</section>
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/20/link-a-table-row-with-jquery/">Link a Table Row with jQuery</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/25/run-ruby-scripts-within-vim/">Run Ruby Scripts within VIM!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/10/iterm2-same-directory/">iTerm2: Stay in the same directory</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("squamigera", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/squamigera" class="twitter-follow-button" data-show-count="false">Follow @squamigera</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Jakob -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

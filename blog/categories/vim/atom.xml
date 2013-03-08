@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: vim | artathack.com]]></title>
+  <link href="http://znake.github.com/blog/categories/vim/atom.xml" rel="self"/>
+  <link href="http://znake.github.com/"/>
+  <updated>2013-03-08T11:35:53+01:00</updated>
+  <id>http://znake.github.com/</id>
+  <author>
+    <name><![CDATA[Jakob]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Run Ruby Scripts within VIM!]]></title>
+    <link href="http://znake.github.com/blog/2012/08/25/run-ruby-scripts-within-vim/"/>
+    <updated>2012-08-25T11:41:00+02:00</updated>
+    <id>http://znake.github.com/blog/2012/08/25/run-ruby-scripts-within-vim</id>
+    <content type="html"><![CDATA[<p>Since I'm writing lots of Ruby scripts lately I was tired testing them using the Command Line and MacVim.</p>
+
+<p>Saving the file, go to to terminal, reuse last command <code>$ ruby foobar.rb</code></p>
+
+<blockquote><p>to slow and boring!!!</p></blockquote>
+
+<p>Fortunately I found out it is possible to run Ruby Scripts inside VIM with the following 2 commands:</p>
+
+<p>``` vim
+:set makeprg=ruby\ %</p>
+
+<p>:make
+```</p>
+
+<p>If you are lazy like me put something like this in your .vimrc and run your scripts blazingly fast (3 keystrokes)!</p>
+
+<p><code>vim
+map &lt;Leader&gt;rr :set makeprg=ruby\ %&lt;cr&gt;:make&lt;cr&gt;
+</code></p>
+
+<p>If you use RVM and want to use a specific version of your installed rubies you can go with something like this:</p>
+
+<p><code>vim
+map &lt;Leader&gt;rr :set makeprg=~/.rvm/bin/ruby-1.9.3-p194\ %&lt;cr&gt;:make&lt;cr&gt;
+</code>
+Of course this works with other scripting languages as well e.g.:</p>
+
+<p><code>vim
+map &lt;Leader&gt;rp :set makeprg=python\ %&lt;cr&gt;:make&lt;cr&gt;
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>

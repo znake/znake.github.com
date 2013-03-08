@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: html | artathack.com]]></title>
+  <link href="http://znake.github.com/blog/categories/html/atom.xml" rel="self"/>
+  <link href="http://znake.github.com/"/>
+  <updated>2013-03-08T11:35:53+01:00</updated>
+  <id>http://znake.github.com/</id>
+  <author>
+    <name><![CDATA[Jakob]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Link a Table Row with jQuery]]></title>
+    <link href="http://znake.github.com/blog/2013/01/20/link-a-table-row-with-jquery/"/>
+    <updated>2013-01-20T11:41:00+01:00</updated>
+    <id>http://znake.github.com/blog/2013/01/20/link-a-table-row-with-jquery</id>
+    <content type="html"><![CDATA[<p>Since I had to do this lately and didn't found a tutorial which was up to date I decided to write one by myself. If you google this task the great post of Imar Spaanjaars <a href="http://imar.spaanjaars.com/549/how-do-i-make-a-full-table-row-clickable-using-jquery">How Do I Make a Full Table Row Clickable Using jQuery?</a> is one of the top results, so I´d like to show a quite similar but simplified version of this example. (just to provide and alternative attempt not a better one, to make this clear!)</p>
+
+<p>I also use a table with 3 rows which are all linked to different sites. Imar solves the solution by using an additional column in which he provides the links as a fallback for old browsers and hides them with jQuery.</p>
+
+<p><code>html
+&lt;tr&gt;
+  &lt;td&gt;&lt;a href="http://www.google.com/"&gt;http://www.google.com/&lt;/a&gt;&lt;/td&gt;
+  &lt;td&gt;1&lt;/td&gt;
+  &lt;td&gt;2&lt;/td&gt;
+  &lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;&lt;a href="http://www.yahoo.com/"&gt;http://www.yahoo.com/&lt;/a&gt;&lt;/td&gt;
+  &lt;td&gt;4&lt;/td&gt;
+  &lt;td&gt;5&lt;/td&gt;
+  &lt;td&gt;6&lt;/td&gt;
+&lt;/tr&gt;
+</code></p>
+
+<p>If you don't care about old browsers I think there is a shorter method. Instead of using and additional <code>&lt;td&gt;</code> I want to link the table row <code>&lt;tr&gt;</code> explicitly like:</p>
+
+<p><code>html
+&lt;tr url="http://www.google.at"&gt;
+  &lt;td&gt;1&lt;/td&gt;
+  &lt;td&gt;2&lt;/td&gt;
+  &lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr url="http://www.yahoo.at"&gt;
+  &lt;td&gt;4&lt;/td&gt;
+  &lt;td&gt;5&lt;/td&gt;
+  &lt;td&gt;6&lt;/td&gt;
+&lt;/tr&gt;
+</code></p>
+
+<p>To trigger the url when clicking at a table row you can use the <code>live()</code> event of jQuery like this:</p>
+
+<p>``` javascript</p>
+
+<pre><code>$(function () {
+  $("table tr").live("click",function() { 
+    location.href = $(this).attr("url");
+  });
+});
+</code></pre>
+
+<p>```</p>
+
+<p>To communicate to your user that a table row is clickable you might want to use some css:</p>
+
+<p><code>css
+.Pointer {
+  cursor: pointer;
+}
+</code></p>
+
+<p>The whole code:</p>
+
+<p><a href="https://gist.github.com/4524458">https://gist.github.com/4524458</a></p>
+]]></content>
+  </entry>
+  
+</feed>

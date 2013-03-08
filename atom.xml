@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[artathack.com]]></title>
+  <link href="http://znake.github.com/atom.xml" rel="self"/>
+  <link href="http://znake.github.com/"/>
+  <updated>2013-03-08T11:35:53+01:00</updated>
+  <id>http://znake.github.com/</id>
+  <author>
+    <name><![CDATA[Jakob]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Link a Table Row with jQuery]]></title>
+    <link href="http://znake.github.com/blog/2013/01/20/link-a-table-row-with-jquery/"/>
+    <updated>2013-01-20T11:41:00+01:00</updated>
+    <id>http://znake.github.com/blog/2013/01/20/link-a-table-row-with-jquery</id>
+    <content type="html"><![CDATA[<p>Since I had to do this lately and didn&#8217;t found a tutorial which was up to date I decided to write one by myself. If you google this task the great post of Imar Spaanjaars <a href="http://imar.spaanjaars.com/549/how-do-i-make-a-full-table-row-clickable-using-jquery">How Do I Make a Full Table Row Clickable Using jQuery?</a> is one of the top results, so I´d like to show a quite similar but simplified version of this example. (just to provide and alternative attempt not a better one, to make this clear!)</p>
+
+<p>I also use a table with 3 rows which are all linked to different sites. Imar solves the solution by using an additional column in which he provides the links as a fallback for old browsers and hides them with jQuery.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;tr&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.google.com/&quot;</span><span class="nt">&gt;</span>http://www.google.com/<span class="nt">&lt;/a&gt;&lt;/td&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;</span>1<span class="nt">&lt;/td&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;</span>2<span class="nt">&lt;/td&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;</span>3<span class="nt">&lt;/td&gt;</span>
+</span><span class='line'><span class="nt">&lt;/tr&gt;</span>
+</span><span class='line'><span class="nt">&lt;tr&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.yahoo.com/&quot;</span><span class="nt">&gt;</span>http://www.yahoo.com/<span class="nt">&lt;/a&gt;&lt;/td&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;</span>4<span class="nt">&lt;/td&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;</span>5<span class="nt">&lt;/td&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;</span>6<span class="nt">&lt;/td&gt;</span>
+</span><span class='line'><span class="nt">&lt;/tr&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you don&#8217;t care about old browsers I think there is a shorter method. Instead of using and additional <code>&lt;td&gt;</code> I want to link the table row <code>&lt;tr&gt;</code> explicitly like:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;tr</span> <span class="na">url=</span><span class="s">&quot;http://www.google.at&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;</span>1<span class="nt">&lt;/td&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;</span>2<span class="nt">&lt;/td&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;</span>3<span class="nt">&lt;/td&gt;</span>
+</span><span class='line'><span class="nt">&lt;/tr&gt;</span>
+</span><span class='line'><span class="nt">&lt;tr</span> <span class="na">url=</span><span class="s">&quot;http://www.yahoo.at&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;</span>4<span class="nt">&lt;/td&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;</span>5<span class="nt">&lt;/td&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;td&gt;</span>6<span class="nt">&lt;/td&gt;</span>
+</span><span class='line'><span class="nt">&lt;/tr&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>To trigger the url when clicking at a table row you can use the <code>live()</code> event of jQuery like this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;table tr&quot;</span><span class="p">).</span><span class="nx">live</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;url&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">});</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>To communicate to your user that a table row is clickable you might want to use some css:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.Pointer</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">cursor</span><span class="o">:</span> <span class="k">pointer</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>The whole code:</p>
+
+<p><a href="https://gist.github.com/4524458">https://gist.github.com/4524458</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Run Ruby Scripts within VIM!]]></title>
+    <link href="http://znake.github.com/blog/2012/08/25/run-ruby-scripts-within-vim/"/>
+    <updated>2012-08-25T11:41:00+02:00</updated>
+    <id>http://znake.github.com/blog/2012/08/25/run-ruby-scripts-within-vim</id>
+    <content type="html"><![CDATA[<p>Since I&#8217;m writing lots of Ruby scripts lately I was tired testing them using the Command Line and MacVim.</p>
+
+<p>Saving the file, go to to terminal, reuse last command <code>$ ruby foobar.rb</code></p>
+
+<blockquote><p>to slow and boring!!!</p></blockquote>
+
+<p>Fortunately I found out it is possible to run Ruby Scripts inside VIM with the following 2 commands:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='vim'><span class='line'><span class="p">:</span><span class="k">set</span> <span class="nb">makeprg</span><span class="p">=</span><span class="k">ruby</span>\ %
+</span><span class='line'>
+</span><span class='line'><span class="p">:</span><span class="k">make</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you are lazy like me put something like this in your .vimrc and run your scripts blazingly fast (3 keystrokes)!</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='vim'><span class='line'>map <span class="p">&lt;</span>Leader<span class="p">&gt;</span>rr :<span class="k">set</span> <span class="nb">makeprg</span><span class="p">=</span><span class="k">ruby</span>\ %<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>:<span class="k">make</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you use RVM and want to use a specific version of your installed rubies you can go with something like this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='vim'><span class='line'>map <span class="p">&lt;</span>Leader<span class="p">&gt;</span>rr :<span class="k">set</span> <span class="nb">makeprg</span><span class="p">=~</span><span class="sr">/.rvm/</span><span class="nb">bin</span>/<span class="k">ruby</span><span class="m">-1</span>.<span class="m">9</span>.<span class="m">3</span><span class="p">-</span>p194\ %<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>:<span class="k">make</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Of course this works with other scripting languages as well e.g.:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='vim'><span class='line'>map <span class="p">&lt;</span>Leader<span class="p">&gt;</span>rp :<span class="k">set</span> <span class="nb">makeprg</span><span class="p">=</span>python\ %<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>:<span class="k">make</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[iTerm2: Stay in the same directory]]></title>
+    <link href="http://znake.github.com/blog/2012/08/10/iterm2-same-directory/"/>
+    <updated>2012-08-10T11:41:00+02:00</updated>
+    <id>http://znake.github.com/blog/2012/08/10/iterm2-same-directory</id>
+    <content type="html"><![CDATA[<p><img class="center" src="https://github.com/znake/znake.github.com/blob/master/images/iterm2/logo.png?raw=true" title="logo" ></p>
+
+<p>I use iTerm2 for about a year now but recognized one &#8220;hidden&#8221; handy feature just some days ago.</p>
+
+<p>If you cd in a directory where you might want to run a server, run your tests, use your VCS of choice and so on you need to open the same directory over and over again in your tabs or split panes. Open a new Tab and cd to the same directory all the time is very wasteful. So I´ve written a script which does that for me and bundled it with Spark so I just needed to type a shortcut to open a new Tab and cd to my current directory.</p>
+
+<p>BUT with iTerm2 you can achive this behaviour very easily:</p>
+
+<p>Go to Preferences -> Profiles -> General -> Working Directory -> Advanced Configuration -> Edit</p>
+
+<p><img src="https://github.com/znake/znake.github.com/blob/master/images/iterm2/-1.png?raw=true" alt="first" /></p>
+
+<p>Then you´ll be in this menu:</p>
+
+<p><img src="https://github.com/znake/znake.github.com/blob/master/images/iterm2/-2.png?raw=true" alt="second" /></p>
+
+<p>And change the Radio Button to Reuse previous session´s directory and you´ll get the automatic cd of your current directory for free!</p>
+
+<p>UPDATE:</p>
+
+<p>If you use zsh &amp; RVM you want to add this line to your .zshrc:</p>
+
+<p>__rvm_project_rvmrc</p>
+
+<p><a href="https://rvm.io/integration/zsh/">https://rvm.io/integration/zsh/</a></p>
+]]></content>
+  </entry>
+  
+</feed>

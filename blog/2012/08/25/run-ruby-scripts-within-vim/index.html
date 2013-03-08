@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Run Ruby Scripts within VIM! - artathack.com</title>
+  <meta name="author" content="Jakob">
+
+  
+  <meta name="description" content="Since I&#8217;m writing lots of Ruby scripts lately I was tired testing them using the Command Line and MacVim. Saving the file, go to to terminal, &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://znake.github.com/blog/2012/08/25/run-ruby-scripts-within-vim/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="artathack.com" type="application/atom+xml">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <div id="logo">
+    <!--<div id="logoLeft">{</div>-->
+    <!--<div id="logoText">dev</div>-->
+    <!--<div id="logoRight">}</div>-->
+  	<div class="clear"></div>
+  </div>
+  <h1><a href="/">artathack.com</a></h1>
+  
+    <h2>about web and mobile development</h2>
+  
+  <div class="clear"></div>
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:znake.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      
+        <h1 class="entry-title">Run Ruby Scripts Within VIM!</h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-25T11:41:00+02:00" pubdate data-updated="true">Aug 25<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Since I&#8217;m writing lots of Ruby scripts lately I was tired testing them using the Command Line and MacVim.</p>
+
+<p>Saving the file, go to to terminal, reuse last command <code>$ ruby foobar.rb</code></p>
+
+<blockquote><p>to slow and boring!!!</p></blockquote>
+
+<p>Fortunately I found out it is possible to run Ruby Scripts inside VIM with the following 2 commands:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='vim'><span class='line'><span class="p">:</span><span class="k">set</span> <span class="nb">makeprg</span><span class="p">=</span><span class="k">ruby</span>\ %
+</span><span class='line'>
+</span><span class='line'><span class="p">:</span><span class="k">make</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you are lazy like me put something like this in your .vimrc and run your scripts blazingly fast (3 keystrokes)!</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='vim'><span class='line'>map <span class="p">&lt;</span>Leader<span class="p">&gt;</span>rr :<span class="k">set</span> <span class="nb">makeprg</span><span class="p">=</span><span class="k">ruby</span>\ %<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>:<span class="k">make</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you use RVM and want to use a specific version of your installed rubies you can go with something like this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='vim'><span class='line'>map <span class="p">&lt;</span>Leader<span class="p">&gt;</span>rr :<span class="k">set</span> <span class="nb">makeprg</span><span class="p">=~</span><span class="sr">/.rvm/</span><span class="nb">bin</span>/<span class="k">ruby</span><span class="m">-1</span>.<span class="m">9</span>.<span class="m">3</span><span class="p">-</span>p194\ %<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>:<span class="k">make</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Of course this works with other scripting languages as well e.g.:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='vim'><span class='line'>map <span class="p">&lt;</span>Leader<span class="p">&gt;</span>rp :<span class="k">set</span> <span class="nb">makeprg</span><span class="p">=</span>python\ %<span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>:<span class="k">make</span><span class="p">&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Jakob</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-25T11:41:00+02:00" pubdate data-updated="true">Aug 25<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/ruby/'>ruby</a>, <a class='category' href='/blog/categories/vim/'>vim</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://znake.github.com/blog/2012/08/25/run-ruby-scripts-within-vim/" data-via="squamigera" data-counturl="http://znake.github.com/blog/2012/08/25/run-ruby-scripts-within-vim/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left articlenav" href="/blog/2012/08/10/iterm2-same-directory/" title="Previous Post: iTerm2: Stay in the same directory">&laquo; iTerm2: Stay in the same directory</a>
+      
+      
+        <a class="basic-alignment right articlenav" href="/blog/2013/01/20/link-a-table-row-with-jquery/" title="Next Post: Link a Table Row with jQuery">Link a Table Row with jQuery &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    
+<section>
+	<span>
+		<img src="http://www.gravatar.com/avatar/4a34fec6388df56916794f568aff700f" alt="Gravatar of Jakob " title="Gravatar of Jakob" />
+	</span>
+  <h2>Jakob Lehner</h2>
+  <p>Hi, I´m an austrian software developer.</p>
+  <p>I´m enthusiastic about web and mobile development. This blog is about technology and tools I love and use everyday like Ruby, CoffeeScript, VIM, HTML5 and much more.</p>
+  <p>More about me:   <a href="http://www.jakoblehner.com/">jakoblehner.com</a></p> 
+</section>
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/20/link-a-table-row-with-jquery/">Link a Table Row with jQuery</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/25/run-ruby-scripts-within-vim/">Run Ruby Scripts within VIM!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/10/iterm2-same-directory/">iTerm2: Stay in the same directory</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("squamigera", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/squamigera" class="twitter-follow-button" data-show-count="false">Follow @squamigera</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Jakob -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
