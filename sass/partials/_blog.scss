@@ -49,7 +49,7 @@ article {
   img, video, .flash-video {
     @extend .flex-content;
     @extend .basic-alignment;
-    @include shadow-box;
+    /*@include shadow-box;*/
   }
   .footnotes {
     font-size: 0.8em;
