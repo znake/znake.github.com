@@ -9,8 +9,9 @@
   <meta name="author" content="Jakob">
 
   
-  <meta name="description" content="Since I moved from bash to zsh I figured out some commands for Octopress stopped working.
-">
+  <meta name="description" content="Since I moved from bash to zsh I figured out some commands for Octopress stopped working. E.g. when I run rake deploy I get this: 1
+2
+$ bundle exec &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,7 +81,7 @@
   <header>
     
       <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2013/03/08/issues-with-zsh-and-octopress/">Issues With Zsh and Octopress</a></h1>
+        <h1 class="entry-title"><a href="/blog/2013/03/08/issues-with-zsh-and-octopress/">Issues With ZSH and Octopress</a></h1>
       
     
     
@@ -97,9 +98,7 @@
   
 
 
-<time datetime="2013-03-08T00:00:00+01:00" pubdate data-updated="true">Mar 8<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/03/08/issues-with-zsh-and-octopress/#disqus_thread">Comments</a>
+<time datetime="2013-03-08T21:02:00+01:00" pubdate data-updated="true">Mar 8<span>th</span>, 2013</time>
         
       </p>
     
@@ -107,6 +106,48 @@
 
 
   <div class="entry-content"><p>Since I moved from bash to zsh I figured out some commands for Octopress stopped working.</p>
+
+<p>E.g. when I run rake deploy I get this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>bundle <span class="nb">exec </span>rake deploy
+</span><span class='line'>zsh: correct <span class="s1">&#39;deploy&#39;</span> to <span class="s1">&#39;_deploy&#39;</span> <span class="o">[</span>nyae<span class="o">]</span>?
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>To get rid of the annoying message I now use some commands with quotation marks like this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># deploying</span>
+</span><span class='line'><span class="nv">$ </span>bundle <span class="nb">exec </span>rake deploy
+</span><span class='line'>-&gt;
+</span><span class='line'><span class="nv">$ </span>bundle <span class="nb">exec</span> <span class="s2">&quot;rake deploy&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># installing new themes</span>
+</span><span class='line'><span class="nv">$ </span>bundle <span class="nb">exec </span>rake install<span class="o">[</span>slash<span class="o">]</span>
+</span><span class='line'>-&gt;
+</span><span class='line'><span class="nv">$ </span>bundle <span class="nb">exec </span>rake <span class="s2">&quot;install[slash]&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># generating a blog post</span>
+</span><span class='line'><span class="nv">$ </span>rake new_post<span class="o">[</span>Issues with zsh and Octopress<span class="o">]</span>
+</span><span class='line'>-&gt;
+</span><span class='line'><span class="nv">$ </span>rake <span class="s2">&quot;new_post[Issues with zsh and Octopress]&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
 </div>
   
   
@@ -138,8 +179,6 @@
 
 
 <time datetime="2013-01-20T11:41:00+01:00" pubdate data-updated="true">Jan 20<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/01/20/link-a-table-row-with-jquery/#disqus_thread">Comments</a>
         
       </p>
     
@@ -267,8 +306,6 @@
 
 <time datetime="2012-08-25T11:41:00+02:00" pubdate data-updated="true">Aug 25<span>th</span>, 2012</time>
         
-         | <a href="/blog/2012/08/25/run-ruby-scripts-within-vim/#disqus_thread">Comments</a>
-        
       </p>
     
   </header>
@@ -343,8 +380,6 @@
 
 <time datetime="2012-08-10T11:41:00+02:00" pubdate data-updated="true">Aug 10<span>th</span>, 2012</time>
         
-         | <a href="/blog/2012/08/10/iterm2-same-directory/#disqus_thread">Comments</a>
-        
       </p>
     
   </header>
@@ -406,7 +441,7 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/03/08/issues-with-zsh-and-octopress/">Issues With Zsh And Octopress</a>
+        <a href="/blog/2013/03/08/issues-with-zsh-and-octopress/">Issues with ZSH and Octopress</a>
       </li>
     
       <li class="post">

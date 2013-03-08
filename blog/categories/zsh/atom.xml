@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: zsh | artathack.com]]></title>
+  <link href="http://znake.github.com/blog/categories/zsh/atom.xml" rel="self"/>
+  <link href="http://znake.github.com/"/>
+  <updated>2013-03-08T21:26:40+01:00</updated>
+  <id>http://znake.github.com/</id>
+  <author>
+    <name><![CDATA[Jakob]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Issues with ZSH and Octopress]]></title>
+    <link href="http://znake.github.com/blog/2013/03/08/issues-with-zsh-and-octopress/"/>
+    <updated>2013-03-08T21:02:00+01:00</updated>
+    <id>http://znake.github.com/blog/2013/03/08/issues-with-zsh-and-octopress</id>
+    <content type="html"><![CDATA[<p>Since I moved from bash to zsh I figured out some commands for Octopress stopped working.</p>
+
+<p>E.g. when I run rake deploy I get this:
+<code>bash
+$ bundle exec rake deploy
+zsh: correct 'deploy' to '_deploy' [nyae]?
+</code></p>
+
+<p>To get rid of the annoying message I now use some commands with quotation marks like this:
+``` bash</p>
+
+<h1>deploying</h1>
+
+<p>$ bundle exec rake deploy
+->
+$ bundle exec "rake deploy"</p>
+
+<h1>installing new themes</h1>
+
+<p>$ bundle exec rake install[slash]
+->
+$ bundle exec rake "install[slash]"</p>
+
+<h1>generating a blog post</h1>
+
+<p>$ rake new_post[Issues with zsh and Octopress]
+->
+$ rake "new_post[Issues with zsh and Octopress]"
+```</p>
+]]></content>
+  </entry>
+  
+</feed>
